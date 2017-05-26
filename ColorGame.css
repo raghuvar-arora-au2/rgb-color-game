@@ -1,0 +1,12 @@
+.square{
+	background-color:purple;
+	float:left;
+	height:100px;
+	width: 30%;
+	margin:1.6%;
+	}
+body{background-color:#232323;
+}
+
+h1{color:white;
+text-align:center;}
