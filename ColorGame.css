@@ -4,9 +4,25 @@
 	height:100px;
 	width: 30%;
 	margin:1.6%;
+	min-width:100px;
+	border-radius: 12%;
+
 	}
 body{background-color:#232323;
 }
 
 h1{color:white;
+text-align:center;
+background-color:rgb(177,109,150);
+height:125px;
+margin-left: 0px;
+}
+
+h2{color:white;
 text-align:center;}
+
+.container{
+	padding-right:30%;
+	padding-left:30%;
+
+}
