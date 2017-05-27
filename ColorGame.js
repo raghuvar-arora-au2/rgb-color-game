@@ -9,7 +9,7 @@ for(i=0; i<6;i++){
 	var sqr=document.getElementsByClassName("square")[i];
 	sqr.style.backgroundColor=("rgb("+random(0,255)+","+random(0,255)+","+random(0,255)+")");
 	sqr.addEventListener("click", function(){
-		this.style.visibility="hidden";
+		this.style.backgroundColor="#232323";
 	});
 }
 
@@ -17,8 +17,14 @@ var correctbox=document.getElementsByClassName("square")[random(0,5)];
 var correctrgb=correctbox.style.backgroundColor;
 
 correctbox.addEventListener("click", function(){
-	this.style.visibility="visible";
-})
+	this.style.backgroundColor=correctrgb;
+
+	for(u=0; u<6;u++){
+	var sqr=document.getElementsByClassName("square")[u];
+	sqr.style.backgroundColor=correctrgb;
+	h1=document.querySelector("h1");
+	h1.style.backgroundColor=correctrgb;}
+});	
 
 
 var h2=document.querySelector("h2");
