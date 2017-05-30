@@ -1,25 +1,33 @@
 function random(min, max){
 	return Math.floor(Math.random()*(max-min+1))+min;}
 
-var r=random(0,255);
+function setColor(a){var r=random(0,255);
 var g=random(0,255);
 var b=random(0,255);
 
-for(i=0; i<6;i++){
+for(i=0; i<a;i++){
 	var sqr=document.getElementsByClassName("square")[i];
 	sqr.style.backgroundColor=("rgb("+random(0,255)+","+random(0,255)+","+random(0,255)+")");
 	sqr.addEventListener("click", function(){
 		this.style.backgroundColor="#232323";
 	});
-}
+}};
 
-var correctbox=document.getElementsByClassName("square")[random(0,5)];
+
+function getWinningBox(a){
+var correctbox=document.getElementsByClassName("square")[random(0,a-1)];
+return correctbox;};
+
+function getWinningColor(a, correctbox){
 var correctrgb=correctbox.style.backgroundColor;
+return correctrgb;};
 
-correctbox.addEventListener("click", function(){
+function makeplayable(a, correctrgb, correctbox){
+
+correctbox.addEventListener("click", function correctclick(){
 	this.style.backgroundColor=correctrgb;
-
-	for(u=0; u<6;u++){
+	this.removeEventListener("click", correctclick);
+	for(u=0; u<a;u++){
 	var sqr=document.getElementsByClassName("square")[u];
 	sqr.style.backgroundColor=correctrgb;
 	h1=document.querySelector("h1");
@@ -27,5 +35,29 @@ correctbox.addEventListener("click", function(){
 });	
 
 
-var h2=document.querySelector("h2");
-h2.textContent=correctrgb;
+	var h2=document.querySelector("h2");
+	h2.textContent=correctrgb;}
+
+function init(a){
+setColor(a);
+correctbox=getWinningBox(a);
+correctrgb=getWinningColor(a, correctbox);
+makeplayable(a,correctrgb, correctbox);
+
+};
+init(6);
+
+var a=document.querySelector("#hard");
+a.addEventListener("click", function(){
+	init(6);
+});
+
+var a=document.querySelector("#easy");
+a.addEventListener("click", function(){
+	init(3);
+});
+
+var a=document.querySelector("#reset");
+a.addEventListener("click", function(){
+	init(6);
+});

@@ -1,5 +1,5 @@
 .square{
-	background-color:purple;
+	background-color:#232323;
 	margin:1.6%;
 	width:30%;
 	float:left;
@@ -43,4 +43,28 @@ padding:0px;
 font-weight:normal;
 line-height: 1px
 
+}
+
+#stripe{
+	height:25px;
+	background-color:white;
+	width:100%;
+}
+
+button{
+	border-style:none;
+	font-size:20px;
+}
+
+#hard{
+	margin-left:25%;
+	float:left;
+}
+#easy{
+	margin-left:1px;
+}
+
+#reset{
+	float:right;
+	margin-right:25%;
 }
