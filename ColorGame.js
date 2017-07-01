@@ -5,6 +5,10 @@ function setColor(a){var r=random(0,255);
 var g=random(0,255);
 var b=random(0,255);
 
+for(i=0; i<6;i++){var sqr1=document.getElementsByClassName("square")[i];
+sqr1.style.backgroundColor="#232323";}
+console.log(r+g+b)
+
 for(i=0; i<a;i++){
 	var sqr=document.getElementsByClassName("square")[i];
 	sqr.style.backgroundColor=("rgb("+random(0,255)+","+random(0,255)+","+random(0,255)+")");
@@ -43,7 +47,7 @@ setColor(a);
 correctbox=getWinningBox(a);
 correctrgb=getWinningColor(a, correctbox);
 makeplayable(a,correctrgb, correctbox);
-
+return a;
 };
 init(6);
 
